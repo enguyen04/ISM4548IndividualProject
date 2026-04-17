@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // go to biasSelect.html when button is clicked
     if (goButton) {
         goButton.addEventListener("click", function () {
+            gtag("event", "button_click", {
+            button_name: "quiz_button"
+});
             window.location.href = "biasSelect.html";
         });
     } // end if 
@@ -17,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // displays a message
     if (subButton) {
         subButton.addEventListener("click", function () {
+            gtag("event", "button_click", {
+            button_name: "signup_button"
+            });
         document.getElementById("subForm").textContent = "This doesn't actually do anything, but thanks for subscribing!";
         });
     } // end if 
@@ -32,6 +38,42 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("resultModal").style.display = "none";
         });
     } // end if closeBtn
+
+    // LINK CLICK
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (typeof gtag === "function") {
+          gtag("event", "link_click", {
+            link_type: "nav",
+            link_url: this.href
+          });
+        }
+      });
+    });
+
+    // table link click
+    document.querySelectorAll("table a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (typeof gtag === "function") {
+          gtag("event", "link_click", {
+            link_type: "table",
+            link_url: this.href
+          });
+        }
+      });
+    });
+
+    // TIME ON PAGE
+    let startTime = Date.now();
+
+    window.addEventListener("beforeunload", function () {
+      let timeSpent = Math.round((Date.now() - startTime) / 1000);
+
+      gtag("event", "time_on_page", {
+        event_category: "engagement",
+        value: timeSpent
+      });
+    });
 
 }); // end DOMContentLoaded
 
@@ -112,5 +154,16 @@ function calculateResult() {
         }
     }
 
-    return huntrxScore > sajaScore ? "huntrx" : "saja";
+     let result = huntrxScore > sajaScore ? "huntrx" : "saja";
+    
+    // collection who they got
+    if (typeof gtag === "function") {
+        gtag("event", "quiz_result", {
+        result: result,
+        huntrx_score: huntrxScore,
+        saja_score: sajaScore
+});
+    }
+
+    return result;
 } // end calculateResult
