@@ -56,10 +56,10 @@ function displayGroup() {
 
     if (result === "huntrx") {
         resultText.textContent = "You got HUNTR/X!";
-        resultImage.src = "images/huntrix.gif";
+        resultImage.src = "huntrix.gif";
     } else {
         resultText.textContent = "You got Saja Boys!";
-        resultImage.src = "images/sajaboys.gif";
+        resultImage.src = "sajaboys.gif";
     }
     modal.style.display = "flex";
 }; // end displayGroup
