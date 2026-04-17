@@ -160,8 +160,6 @@ function calculateResult() {
     if (typeof gtag === "function") {
         gtag("event", "quiz_result", {
         result: result,
-        huntrx_score: huntrxScore,
-        saja_score: sajaScore
 });
     }
 
