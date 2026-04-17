@@ -4,7 +4,7 @@ html {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("kpdm_home.jpg");
+    background-image: url('kpdm_home.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
