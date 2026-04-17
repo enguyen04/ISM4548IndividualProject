@@ -1,0 +1,81 @@
+<!-- 
+Emma Nguyen
+web anaylistcs 2026
+individual project: KPOP Bias Picker
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPOP Fanpage</title>
+    <!-- linking to other file -->
+    <script src="./src/main.js" defer></script> <!-- js -->
+    <link rel="stylesheet" href="style/style.css"> <!-- css -->
+</head>
+<body>
+<main>
+
+    <h1 id="homePage">KPop Demon Hunters Fanpage</h1>
+            <!-- Navigation Bar -->
+        <nav class="topbar">
+            <ul>
+                <li class="divider"></li>
+
+                <li><a href="index.html">Home</a></li>
+                <li class="divider"></li>
+                <li><a href="groupInfo.html">Groups</a></li>
+                <li class="divider"></li>
+                <li><a href="biasSelect.html">Quiz!</a></li>
+
+                <li class="divider"></li>
+
+            </ul>
+        </nav> <br><br>
+        
+        <div class="quizIntro">
+            <h2>Find out which group you belong to!</h2>
+            <p>Take the quiz to find out your KPop Demon Hunters group!</p>
+
+            <!-- button adding -->  
+            <button class="button" type="button" id="goButton">GO</button>
+        </div>
+
+        <div>
+            <header>
+                <br><br>
+            <h1> What is KPop Demon Hunters?</h1>
+            </header>
+            <div class="bodyText">
+                <p> Its a movie about "A world-renowned K-Pop girl group balance their lives in the spotlight with their secret identities 
+                    as demon hunters." </p>
+                <p>KPop Demon Hunters began streaming on Netflix on June 20, 2025, and became the most-watched 
+                    original title in Netflix history with over 500 million views. It  received acclaim for its 
+                    animation, visual style, voice acting, story, and music.</p>
+                <p>It won Best Animated Feature and Best Original Song ("Golden") at the 83rd Golden Globe Awards and the 98th Academy Awards.</p>
+            </div>
+        </div>
+
+        <div>
+            <header>
+                <br><br>
+
+            </header>
+            <div>
+              <h1> Subscribe</h1>  
+                <form class="contactForm" action="#" method="post">
+                <input type="email" placeholder="Your Email">
+                <button id="subButton" class="button" type="button">Send</button>
+                </form>
+                <span class="error" id="subForm"></span>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+    <p>&#169 Emma Nguyen Class 2026</p>
+    </footer>
+
+</body>
+</html>
